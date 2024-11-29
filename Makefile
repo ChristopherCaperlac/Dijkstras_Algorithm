@@ -45,7 +45,7 @@ compare:
 		echo "Missing $${file}_demo.log"; \
 		continue; \
   	fi; \
-		diff ./test_log/$${file}_actual.log ./test_log/$${file}_demo.log > ./test_diff/$${file}_diff.log || true; \
+		diff ./test_log/$${file}_actual.log ./test_log/$${file}_demo.log > ./test_log/$${file}_diff.log || true; \
 	done
 
 update:
