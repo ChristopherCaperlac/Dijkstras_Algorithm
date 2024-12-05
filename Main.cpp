@@ -1,4 +1,5 @@
 #include "Edge.h"
+#include "Graph.h"
 #include <iostream>
 
 int main(){
@@ -17,6 +18,8 @@ int main(){
         return NULL;
     }
 
+    Graph* graph = new Graph(numOfVertices, numOfEdges);
+
     while(!std::cin.eof()){
         int startVertice;
         int endVertice;
@@ -26,7 +29,14 @@ int main(){
         // Here is where you load up the Graph object
     }
 
-    // And here is where you start working on the three tasks
+    graph->printMatrix();
+    std::cout << std::endl << std::endl;
+    graph->printOddVertices();
+    std::cout << std::endl << std::endl;
+    graph->printSP_ODD();
+    std::cout << std::endl;
+
+    delete graph;
 
     return 0;
 }
