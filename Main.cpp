@@ -1,4 +1,3 @@
-#include "Edge.h"
 #include "Graph.h"
 #include <iostream>
 
@@ -33,7 +32,6 @@ int main(){
     graph->printOddVertices();
     std::cout << std::endl;
     graph->printSP_ODD();
-    std::cout << std::endl;
 
     delete graph;
 
