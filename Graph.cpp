@@ -54,7 +54,10 @@ void Graph::printMatrix() {
     std::cout << "The adjacency matrix of G:\n";
     for(int i = 0; i < numOfVertices; i++){
         for(int j = 0; j < numOfVertices; ++j){
-            std::cout << adjacencyMatrix[i][j] << " ";
+            std::cout << adjacencyMatrix[i][j];
+            if (j != numOfVertices - 1){
+                 std::cout << " ";
+            }
         }
         std::cout << std::endl;
     }
@@ -83,7 +86,7 @@ void Graph::printOddVertices() {
             oddVertices[oddCount++] = i + 1;
         }
     }
-    std::cout << "The odd degree vertices in G:\nO = { ";
+    std::cout << "The odd degree vertices in G: \nO = { ";
     for(int i = 0; i < oddCount; ++i){
         std::cout << oddVertices[i];
         if(i < oddCount - 1){
