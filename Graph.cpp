@@ -64,7 +64,7 @@ void Graph::printSP_ODD() {
 
 void Graph::printSP(int index) {
 
-    std::cout << "Single source shortest path lengths from node " << index << std::endl;
+    std::cout << "Single source shortest path lengths from node " << index+1 << std::endl;
 
     // table[i] contains current shortest path length and isRelaxed
     int** table = new int*[numOfVertices];
@@ -88,7 +88,7 @@ void Graph::printSP(int index) {
     }
 
     for (int i = 0; i < numOfVertices; i++) {
-        std::cout << "  " << i << ": " << table[i][0] << std::endl;
+        std::cout << "  " << i+1 << ": " << table[i][0] << std::endl;
     }
 
     for (int i = 0; i < numOfVertices; i++) {
