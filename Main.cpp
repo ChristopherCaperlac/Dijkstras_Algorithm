@@ -25,15 +25,14 @@ int main(){
         int endVertice;
         std::cin >> startVertice;
         std::cin >> endVertice;
-        Edge* newEdge = new Edge(startVertice, endVertice);
-        // Here is where you load up the Graph object
+        graph->setEdge(startVertice - 1, endVertice - 1);
     }
 
     graph->printMatrix();
     std::cout << std::endl << std::endl;
     graph->printOddVertices();
     std::cout << std::endl << std::endl;
-    graph->printSP_ODD();
+    graph->printSP(0);
     std::cout << std::endl;
 
     delete graph;

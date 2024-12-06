@@ -11,8 +11,8 @@ class Graph {
         int numOfVertices;
         int numOfEdges;
 
-        int min(int*);
-        void relaxVertex(int*);
+        int getRelaxIndex(int**);
+        void relaxVertex(int**, int);
 
     public:
     
