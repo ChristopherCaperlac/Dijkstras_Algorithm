@@ -50,16 +50,74 @@ int Graph::getDegree(int index) {
 
 }
 
-// TODO: Implement this
 void Graph::printMatrix() {
+    std::cout << "The adjacency matrix of G:\n";
+    for(int i = 0; i < numOfVertices; i++){
+        for(int j = 0; j < numOfVertices; ++j){
+            std::cout << adjacencyMatrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
-// TODO: Implement this
 void Graph::printOddVertices() {
+
+    int oddVertices[numOfVertices];
+    int oddCount = 0;
+    int count;
+
+    for(int i = 0; i < numOfVertices; ++i){
+        count = 0;
+        int* row = getAdjacentVertices(i);
+
+        if(!row){
+            std::cerr << "Error: adjacency row is null for vertex " << i << "\n";
+            continue;
+        }
+
+        for(int j = 0; j < numOfVertices; ++j){
+            count += row[j];
+        }
+        if((count % 2) == 1)
+        {
+            oddVertices[oddCount++] = i + 1;
+        }
+    }
+    std::cout << "The odd degree vertices in G:\nO = { ";
+    for(int i = 0; i < oddCount; ++i){
+        std::cout << oddVertices[i];
+        if(i < oddCount - 1){
+            std::cout << " ";
+        }
+    }
+    std::cout << " }\n";
 }
 
-// TODO: Implement using printSP
 void Graph::printSP_ODD() {
+    int oddCount = 0;
+    int oddVertices[numOfVertices];
+    int count;
+
+    for(int i = 0; i < numOfVertices; ++i){
+        count = 0;
+        int* row = getAdjacentVertices(i);
+
+        if(!row){
+            std::cerr << "Error: adjacency row is null for vertex " << i << "\n";
+            continue;
+        }
+
+        for(int j = 0; j < numOfVertices; ++j){
+            count += row[j];
+        }
+        if((count % 2) == 1)
+        {
+            oddVertices[oddCount++] = i;
+        }
+    }
+    for(int i = 0; i < oddCount; ++i){
+        printSP(oddVertices[i]);
+    }
 }
 
 void Graph::printSP(int index) {

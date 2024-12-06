@@ -15,7 +15,7 @@ int main(){
     }
     else{
         std::cout<<"Input not found!"<<std::endl;
-        return NULL;
+        return -1;
     }
 
     Graph* graph = new Graph(numOfVertices, numOfEdges);
@@ -29,10 +29,10 @@ int main(){
     }
 
     graph->printMatrix();
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl;
     graph->printOddVertices();
-    std::cout << std::endl << std::endl;
-    graph->printSP(0);
+    std::cout << std::endl;
+    graph->printSP_ODD();
     std::cout << std::endl;
 
     delete graph;
